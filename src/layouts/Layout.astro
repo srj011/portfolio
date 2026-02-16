@@ -1,0 +1,104 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&family=JetBrains+Mono&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Samved Raj</title>
+    </head>
+
+    <body
+        class="relative bg-zinc-950 text-zinc-100
+             font-[Lexend] overflow-x-hidden"
+    >
+        <Navbar />
+
+        <main class="pt-16 relative noise-layer">
+            <slot />
+        </main>
+
+        <Footer />
+
+        <!-- ALL DOM LOGIC GOES HERE -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                /* ================= Scroll Reveal ================= */
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    { threshold: 0.15 },
+                );
+
+                document
+                    .querySelectorAll(".reveal")
+                    .forEach((el) => observer.observe(el));
+
+                /* ================= Navbar Logic ================= */
+                const navbar = document.getElementById("navbar");
+                const progress = document.getElementById("scroll-progress");
+                const menuBtn = document.getElementById("menu-btn");
+                const mobileMenu = document.getElementById("mobile-menu");
+                const links = document.querySelectorAll("[data-link]");
+
+                window.addEventListener("scroll", () => {
+                    const scrollY = window.scrollY;
+
+                    /* Shrink navbar */
+                    navbar?.classList.toggle("h-14", scrollY > 20);
+                    navbar?.classList.toggle("h-16", scrollY <= 20);
+
+                    /* Scroll progress */
+                    const height =
+                        document.documentElement.scrollHeight -
+                        document.documentElement.clientHeight;
+                    if (progress) {
+                        progress.style.width = `${(scrollY / height) * 100}%`;
+                    }
+
+                    /* Active link */
+                    links.forEach((link) => {
+                        const section = document.querySelector(
+                            link.getAttribute("href"),
+                        );
+                        if (!section) return;
+
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top <= 120 && rect.bottom >= 120) {
+                            links.forEach((l) => l.classList.remove("active"));
+                            link.classList.add("active");
+                        }
+                    });
+                });
+
+                /* Mobile menu */
+                menuBtn?.addEventListener("click", () => {
+                    mobileMenu?.classList.toggle("hidden");
+                });
+
+                document.querySelectorAll(".mobile-link").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        mobileMenu?.classList.add("hidden");
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

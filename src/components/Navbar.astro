@@ -1,0 +1,55 @@
+---
+
+---
+
+<nav
+    id="navbar"
+    class="fixed top-0 left-0 w-full z-50 h-16
+         bg-zinc-950/70 backdrop-blur-md
+         border-b border-zinc-800
+         transition-all duration-300"
+>
+    <!-- Scroll progress bar -->
+    <div
+        id="scroll-progress"
+        class="absolute bottom-0 left-0 h-[2px] bg-indigo-500 w-0"
+    >
+    </div>
+
+    <div
+        class="max-w-6xl mx-auto px-6 h-full flex items-center justify-between"
+    >
+        <!-- Logo -->
+        <a href="#" class="font-semibold tracking-tight text-zinc-100">
+            Samved Raj
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-8 text-sm">
+            <a href="#projects" data-link class="nav-link">Projects</a>
+            <a href="#contact" data-link class="nav-link">Contact</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+            id="menu-btn"
+            class="md:hidden text-zinc-300 hover:text-white"
+            aria-label="Toggle menu"
+        >
+            ☰
+        </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+        id="mobile-menu"
+        class="md:hidden hidden
+           bg-zinc-950
+           border-t border-zinc-800"
+    >
+        <div class="px-6 py-4 flex flex-col gap-4 text-sm">
+            <a href="#projects" class="mobile-link">Projects</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+</nav>

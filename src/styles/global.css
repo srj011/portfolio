@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* Base page setup */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Lexend", system-ui, sans-serif;
+}
+
+/* Subtle fade-up animation */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fade-up 0.8s ease-out both;
+}
+
+/* Scroll reveal base state */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* When visible */
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navbar links */
+.nav-link {
+    position: relative;
+    color: #a1a1aa;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #6366f1;
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Mobile links */
+.mobile-link {
+    color: #d4d4d8;
+}
+
+.mobile-link:hover {
+    color: white;
+}
+
+/* Subtle card glow (dark-only) */
+.card-glow {
+    position: relative;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card-glow:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.08);
+}
+/* Subtle page background noise (dark-only, safe) */
+.noise-layer {
+    position: relative;
+}
+
+.noise-layer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.02) 0px,
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 2px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.02) 0px,
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+}
+
+/* Ensure content is above noise */
+.noise-layer > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Subtle vignette */
+.noise-layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0) 55%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+}
+
+/* Card inner shadow (dark-only, subtle) */
+.card-inner {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+    .card-inner {
+        box-shadow: none;
+    }
+}
