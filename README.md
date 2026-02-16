@@ -1,43 +1,23 @@
-# Astro Starter Kit: Minimal
+# Personal Portfolio
 
-```sh
-bun create astro@latest -- --template minimal
-```
+This repository contains the source code for my personal portfolio website.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The site showcases a selection of my academic and personal projects, with a focus on systems programming, GUI development, and clean UI design.
 
-## 🚀 Project Structure
+## Tech Stack
+- Astro
+- Tailwind CSS
+- Rust
+- Python
 
-Inside of your Astro project, you'll see the following folders and files:
+## Features
+- Dark-only, minimal design
+- Project-focused layout
+- Responsive and accessible UI
+- Deployed on Vercel
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Development
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+bun install
+bun dev
