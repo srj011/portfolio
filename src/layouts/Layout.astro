@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
@@ -30,6 +31,8 @@ import Footer from "../components/Footer.astro";
         </main>
 
         <Footer />
+
+        <Analytics />
 
         <!-- ALL DOM LOGIC GOES HERE -->
         <script>
