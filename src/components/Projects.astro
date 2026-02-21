@@ -21,11 +21,66 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
             <article
                 class="reveal card-glow card-inner flex flex-col p-6 rounded-xl
                bg-zinc-800 border border-zinc-700
-               border-zinc-700 hover:border-indigo-500 transition"
+               hover:border-indigo-500 transition"
+            >
+                <div>
+                    <h3 class="text-xl font-semibold text-zinc-100">
+                        Battleship Game
+                        <span class="badge badge-ongoing">Ongoing</span>
+                    </h3>
+                    <p class="text-zinc-400 mt-2">
+                        A Battleship project evolving from a Rust game engine
+                        toward a planned full-stack system, currently focused on
+                        state modeling and strategic AI behavior.
+                    </p>
+                </div>
+
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="px-3 py-1 text-xs rounded-full bg-zinc-700 text-zinc-200"
+                        >
+                            Rust
+                        </span>
+                        <span
+                            class="px-3 py-1 text-xs rounded-full bg-zinc-700 text-zinc-200"
+                        >
+                            AI Strategy
+                        </span>
+                        <span
+                            class="px-3 py-1 text-xs rounded-full bg-zinc-700 text-zinc-200"
+                        >
+                            Axum (Planned)
+                        </span>
+                        <span
+                            class="px-3 py-1 text-xs rounded-full bg-zinc-700 text-zinc-200"
+                        >
+                            React (Planned)
+                        </span>
+                    </div>
+
+                    <a
+                        href="https://github.com/srj011/battleship"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 mt-5 text-sm
+                   text-zinc-300 hover:text-white transition"
+                    >
+                        <GitHubIcon />
+                        <span>View Repository</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- ================= Project 2 ================= -->
+            <article
+                class="reveal card-glow card-inner flex flex-col p-6 rounded-xl
+                bg-zinc-800 border border-zinc-700
+                hover:border-indigo-500 transition"
             >
                 <div>
                     <h3 class="text-xl font-semibold text-zinc-100">
                         Minesweeper Game
+                        <span class="badge badge-completed">Completed</span>
                     </h3>
                     <p class="text-zinc-400 mt-2">
                         A complete Minesweeper implementation featuring
@@ -60,20 +115,21 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
                 </div>
             </article>
 
-            <!-- ================= Project 2 ================= -->
+            <!-- ================= Project 3 ================= -->
             <article
                 class="reveal card-glow card-inner flex flex-col p-6 rounded-xl
                 bg-zinc-800 border border-zinc-700
-                border-zinc-700 hover:border-indigo-500 transition"
+                hover:border-indigo-500 transition"
             >
                 <div>
                     <h3 class="text-xl font-semibold text-zinc-100">
-                        Rock Paper Scissors (Python)
+                        Infinite Tic Tac Toe
+                        <span class="badge badge-completed">Completed</span>
                     </h3>
                     <p class="text-zinc-400 mt-2">
-                        GUI-based Rock Paper Scissors game featuring
-                        button-driven input, randomized computer choices, and
-                        score tracking.
+                        An extended Tic Tac Toe system with a dynamically
+                        expanding board supporting scalable state tracking and
+                        rule enforcement.
                     </p>
                 </div>
 
@@ -92,7 +148,7 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
                     </div>
 
                     <a
-                        href="https://github.com/srj011/RockPaperScissors-GUI"
+                        href="https://github.com/srj011/Infinite-Tic-Tac-Toe"
                         target="_blank"
                         class="inline-flex items-center gap-2 mt-5 text-sm
                    text-zinc-300 hover:text-white transition"
@@ -103,16 +159,16 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
                 </div>
             </article>
 
-            <!-- ================= Project 3 ================= -->
+            <!-- ================= Project 4 ================= -->
             <article
                 class="reveal card-glow card-inner flex flex-col p-6 rounded-xl
-                bg-zinc-800 border border-zinc-700
-                border-zinc-700 hover:border-indigo-500 transition"
+                            bg-zinc-800 border border-zinc-700
+                            hover:border-indigo-500 transition"
             >
                 <div>
                     <h3 class="text-xl font-semibold text-zinc-100">
-                        Rock Paper Scissors (Rust)
-                        <span class="text-sm text-zinc-400"></span>
+                        Rock Paper Scissors
+                        <span class="badge badge-ongoing">Ongoing</span>
                     </h3>
                     <p class="text-zinc-400 mt-2">
                         A modular Rust implementation using enums and pattern
@@ -144,50 +200,7 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
                         href="https://github.com/srj011/Rock-Paper-Scissors-egui"
                         target="_blank"
                         class="inline-flex items-center gap-2 mt-5 text-sm
-                   text-zinc-300 hover:text-white transition"
-                    >
-                        <GitHubIcon />
-                        <span>View Repository</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- ================= Project 4 ================= -->
-            <article
-                class="reveal card-glow card-inner flex flex-col p-6 rounded-xl
-                bg-zinc-800 border border-zinc-700
-                border-zinc-700 hover:border-indigo-500 transition"
-            >
-                <div>
-                    <h3 class="text-xl font-semibold text-zinc-100">
-                        Infinite Tic Tac Toe
-                    </h3>
-                    <p class="text-zinc-400 mt-2">
-                        An extended Tic Tac Toe system with a dynamically
-                        expanding board supporting scalable state tracking and
-                        rule enforcement.
-                    </p>
-                </div>
-
-                <div class="mt-auto">
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        <span
-                            class="px-3 py-1 text-xs rounded-full bg-zinc-700 text-zinc-200"
-                        >
-                            Python
-                        </span>
-                        <span
-                            class="px-3 py-1 text-xs rounded-full bg-zinc-700 text-zinc-200"
-                        >
-                            Tkinter
-                        </span>
-                    </div>
-
-                    <a
-                        href="https://github.com/srj011/Infinite-Tic-Tac-Toe"
-                        target="_blank"
-                        class="inline-flex items-center gap-2 mt-5 text-sm
-                   text-zinc-300 hover:text-white transition"
+                               text-zinc-300 hover:text-white transition"
                     >
                         <GitHubIcon />
                         <span>View Repository</span>
