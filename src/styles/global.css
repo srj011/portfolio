@@ -150,3 +150,11 @@ body {
     transform: translateY(-4px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
+
+.hero-stack span {
+    transition: color 0.2s ease;
+}
+
+.hero-stack span:hover {
+    color: #7c86ff;
+}
