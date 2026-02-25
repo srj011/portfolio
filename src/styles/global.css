@@ -2,10 +2,6 @@
 
 /* ================= Base ================= */
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: "Lexend", system-ui, sans-serif;
 }

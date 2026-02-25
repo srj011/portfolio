@@ -49,11 +49,14 @@ import Analytics from "@vercel/analytics/astro";
                         entries.forEach((entry) => {
                             if (entry.isIntersecting) {
                                 entry.target.classList.add("visible");
-                                observer.unobserve(entry.target);
+                            } else {
+                                entry.target.classList.remove("visible");
                             }
                         });
                     },
-                    { threshold: 0.15 },
+                    {
+                        threshold: 0.15,
+                    },
                 );
 
                 document
@@ -110,5 +113,6 @@ import Analytics from "@vercel/analytics/astro";
                 });
             });
         </script>
+        <script type="module" src="/src/scripts/smooth-scroll.js"></script>
     </body>
 </html>
