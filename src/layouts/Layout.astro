@@ -9,8 +9,54 @@ import SmoothScroll from "../components/SmoothScroll.astro";
 <!doctype html>
 <html lang="en">
     <head>
+        <!-- Basic -->
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0b0f1a" />
+
+        <!-- SEO -->
+        <title>Samved Raj – Systems & Web Developer</title>
+        <meta
+            name="description"
+            content="Samved Raj – Systems & Web Application Developer specializing in Rust, Web Development, and Systems Engineering."
+        />
+        <link rel="canonical" href="https://srj011.is-a.dev/" />
+
+        <!-- Open Graph -->
+        <meta
+            property="og:title"
+            content="Samved Raj – Systems & Web Developer"
+        />
+        <meta
+            property="og:description"
+            content="Rust, Web Development, and Systems Engineering projects."
+        />
+        <meta
+            property="og:image"
+            content="https://srj011.is-a.dev/og-image.png"
+        />
+        <meta property="og:url" content="https://srj011.is-a.dev/" />
+        <meta property="og:type" content="website" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Samved Raj – Systems & Web Developer"
+        />
+        <meta
+            name="twitter:description"
+            content="Rust, Web Development, and Systems Engineering projects."
+        />
+        <meta
+            name="twitter:image"
+            content="https://srj011.is-a.dev/og-image.png"
+        />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/SR_logo.ico" sizes="any" />
+
+        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -23,8 +69,6 @@ import SmoothScroll from "../components/SmoothScroll.astro";
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
-
-        <title>SRJ011</title>
     </head>
 
     <body
@@ -45,8 +89,18 @@ import SmoothScroll from "../components/SmoothScroll.astro";
             class="fixed bottom-6 right-6 p-3 rounded-full bg-zinc-800/80 backdrop-blur-md border border-zinc-700 text-zinc-400 hover:text-white hover:border-indigo-500/50 hover:bg-zinc-700 transition-all duration-300 opacity-0 invisible z-40"
             aria-label="Back to top"
         >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m18 15-6-6-6 6"/>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="m18 15-6-6-6 6"></path>
             </svg>
         </button>
 
@@ -113,14 +167,24 @@ import SmoothScroll from "../components/SmoothScroll.astro";
 
                         // Calculate how much of the section is visible in viewport
                         const visibleTop = Math.max(0, rect.top);
-                        const visibleBottom = Math.min(viewportHeight, rect.bottom);
-                        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+                        const visibleBottom = Math.min(
+                            viewportHeight,
+                            rect.bottom,
+                        );
+                        const visibleHeight = Math.max(
+                            0,
+                            visibleBottom - visibleTop,
+                        );
                         const visibility = visibleHeight / rect.height;
 
                         // Also consider proximity to top of viewport (target is ~120px from top)
                         const distanceFromTarget = Math.abs(rect.top - 120);
 
-                        if (visibility > maxVisibility || (visibility === maxVisibility && distanceFromTarget < 50)) {
+                        if (
+                            visibility > maxVisibility ||
+                            (visibility === maxVisibility &&
+                                distanceFromTarget < 50)
+                        ) {
                             maxVisibility = visibility;
                             activeLink = link;
                         }
