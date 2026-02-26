@@ -2,178 +2,231 @@
 import GitHubIcon from "./icons/GitHubIcon.astro";
 ---
 
-<section id="projects" class="py-28 px-6 bg-zinc-900 border-t border-zinc-800">
-    <div class="max-w-6xl mx-auto space-y-14">
+<section id="projects" class="py-32 px-6 bg-zinc-900 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto space-y-16">
         <!-- Section heading -->
         <div class="space-y-4 reveal">
             <h2 class="text-4xl font-semibold tracking-tight text-zinc-100">
                 Projects
             </h2>
             <div class="h-0.5 w-12 bg-indigo-500 rounded-full"></div>
-            <p class="text-zinc-400 max-w-2xl">
+            <p class="text-zinc-400 text-lg max-w-2xl">
                 A selection of academic and personal projects focused on game
                 logic, GUI development, and systems programming.
             </p>
         </div>
 
         <!-- Projects grid -->
-        <div class="grid md:grid-cols-2 gap-8 auto-rows-fr">
+        <div class="grid md:grid-cols-2 gap-6 auto-rows-fr">
             <!-- ================= Project 1 ================= -->
             <article
-                class="project-card card-glow reveal p-7 h-full flex flex-col rounded-xl border border-zinc-700 bg-zinc-800/70 backdrop-blur-sm transition"
+                class="project-card group relative p-6 rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm transition-all duration-300 hover:border-indigo-500/30 reveal reveal-delay-1 flex flex-col"
             >
+                <!-- Accent bar -->
+                <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500/60 to-indigo-600/20 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
                 <!-- Header -->
-                <div class="flex items-start justify-between">
-                    <h3 class="text-base font-semibold text-zinc-100">
-                        Battleship Game
-                    </h3>
-                    <span class="badge badge-ongoing">Ongoing</span>
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                        <span class="text-xs font-medium text-indigo-400/80 uppercase tracking-wider">Rust</span>
+                        <h3 class="text-lg font-semibold text-zinc-100 mt-1 group-hover:text-white transition-colors">
+                            Battleship Game
+                        </h3>
+                    </div>
+                    <span class="shrink-0 px-2.5 py-1 text-xs font-medium rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300">
+                        Ongoing
+                    </span>
                 </div>
 
                 <!-- Description -->
-                <p class="text-zinc-400 mt-3 leading-relaxed">
+                <p class="text-zinc-400 text-sm leading-relaxed mb-5">
                     A Battleship project evolving from a Rust game engine toward
                     a planned full-stack system, currently focused on state
                     modeling and strategic AI behavior.
                 </p>
 
-                <!-- Footer -->
-                <div class="mt-auto pt-6 flex flex-col gap-4">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Rust</span>
-                        <span class="tag">AI Strategy</span>
-                        <span class="tag">Axum (Planned)</span>
-                        <span class="tag">React (Planned)</span>
+                <!-- Tech tags & Footer -->
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">Rust</span>
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">AI Strategy</span>
                     </div>
 
-                    <a
-                        href="https://github.com/srj011/battleship"
-                        target="_blank"
-                        rel="noopener"
-                        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
-                        bg-indigo-500/80 hover:bg-indigo-500
-                        text-white rounded-md shadow-sm hover:shadow-md
-                        transition-all duration-200 active:scale-[0.95]"
-                    >
-                        <GitHubIcon />
-                        <span>View Repository</span>
-                    </a>
+                    <div class="flex items-center gap-3">
+                        <a
+                            href="https://github.com/srj011/battleship"
+                            target="_blank"
+                            rel="noopener"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-lg
+                            bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 hover:border-indigo-500/40
+                            text-indigo-300 hover:text-indigo-200
+                            transition-all duration-200 active:scale-[0.95]"
+                        >
+                            <GitHubIcon />
+                            <span>Repository</span>
+                        </a>
+                    </div>
                 </div>
             </article>
 
             <!-- ================= Project 2 ================= -->
             <article
-                class="project-card card-glow reveal p-7 h-full flex flex-col rounded-xl border border-zinc-700 bg-zinc-800/70 backdrop-blur-sm transition"
+                class="project-card group relative p-6 rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm transition-all duration-300 hover:border-indigo-500/30 reveal reveal-delay-2 flex flex-col"
             >
-                <div class="flex items-start justify-between">
-                    <h3 class="text-base font-semibold text-zinc-100">
-                        Minesweeper Game
-                    </h3>
-                    <span class="badge badge-completed">Completed</span>
+                <!-- Accent bar -->
+                <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500/60 to-indigo-600/20 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                        <span class="text-xs font-medium text-indigo-400/80 uppercase tracking-wider">Python</span>
+                        <h3 class="text-lg font-semibold text-zinc-100 mt-1 group-hover:text-white transition-colors">
+                            Minesweeper Game
+                        </h3>
+                    </div>
+                    <span class="shrink-0 px-2.5 py-1 text-xs font-medium rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">
+                        Completed
+                    </span>
                 </div>
 
-                <p class="text-zinc-400 mt-3 leading-relaxed">
+                <p class="text-zinc-400 text-sm leading-relaxed mb-5">
                     A complete Minesweeper implementation featuring grid-based
                     logic, recursive cell reveals, and interactive GUI elements.
                 </p>
 
-                <div class="mt-auto pt-6 flex flex-col gap-4">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Python</span>
-                        <span class="tag">Tkinter</span>
+                <!-- Tech tags & Footer -->
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">Python</span>
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">Tkinter</span>
                     </div>
 
-                    <a
-                        href="https://github.com/srj011/Minesweeper"
-                        target="_blank"
-                        rel="noopener"
-                        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
-                        bg-indigo-500/80 hover:bg-indigo-500
-                        text-white rounded-md shadow-sm hover:shadow-md
-                        transition-all duration-200 active:scale-[0.95]"
-                    >
-                        <GitHubIcon />
-                        <span>View Repository</span>
-                    </a>
+                    <div class="flex items-center gap-3">
+                        <a
+                            href="https://github.com/srj011/Minesweeper"
+                            target="_blank"
+                            rel="noopener"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-lg
+                            bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 hover:border-indigo-500/40
+                            text-indigo-300 hover:text-indigo-200
+                            transition-all duration-200 active:scale-[0.95]"
+                        >
+                            <GitHubIcon />
+                            <span>Repository</span>
+                        </a>
+                    </div>
                 </div>
             </article>
 
             <!-- ================= Project 3 ================= -->
             <article
-                class="project-card card-glow reveal p-7 h-full flex flex-col rounded-xl border border-zinc-700 bg-zinc-800/70 backdrop-blur-sm transition"
+                class="project-card group relative p-6 rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm transition-all duration-300 hover:border-indigo-500/30 reveal reveal-delay-3 flex flex-col"
             >
-                <div class="flex items-start justify-between">
-                    <h3 class="text-base font-semibold text-zinc-100">
-                        Infinite Tic Tac Toe
-                    </h3>
-                    <span class="badge badge-completed">Completed</span>
+                <!-- Accent bar -->
+                <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500/60 to-indigo-600/20 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                        <span class="text-xs font-medium text-indigo-400/80 uppercase tracking-wider">Python</span>
+                        <h3 class="text-lg font-semibold text-zinc-100 mt-1 group-hover:text-white transition-colors">
+                            Infinite Tic Tac Toe
+                        </h3>
+                    </div>
+                    <span class="shrink-0 px-2.5 py-1 text-xs font-medium rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">
+                        Completed
+                    </span>
                 </div>
 
-                <p class="text-zinc-400 mt-3 leading-relaxed">
+                <p class="text-zinc-400 text-sm leading-relaxed mb-5">
                     An extended Tic Tac Toe system with a dynamically expanding
                     board supporting scalable state tracking and rule
                     enforcement.
                 </p>
 
-                <div class="mt-auto pt-6 flex flex-col gap-4">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Python</span>
-                        <span class="tag">Tkinter</span>
+                <!-- Tech tags & Footer -->
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">Python</span>
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">Tkinter</span>
                     </div>
 
-                    <a
-                        href="https://github.com/srj011/Infinite-Tic-Tac-Toe"
-                        target="_blank"
-                        rel="noopener"
-                        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
-                        bg-indigo-500/80 hover:bg-indigo-500
-                        text-white rounded-md shadow-sm hover:shadow-md
-                        transition-all duration-200 active:scale-[0.95]"
-                    >
-                        <GitHubIcon />
-                        <span>View Repository</span>
-                    </a>
+                    <div class="flex items-center gap-3">
+                        <a
+                            href="https://github.com/srj011/Infinite-Tic-Tac-Toe"
+                            target="_blank"
+                            rel="noopener"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-lg
+                            bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 hover:border-indigo-500/40
+                            text-indigo-300 hover:text-indigo-200
+                            transition-all duration-200 active:scale-[0.95]"
+                        >
+                            <GitHubIcon />
+                            <span>Repository</span>
+                        </a>
+                    </div>
                 </div>
             </article>
 
             <!-- ================= Project 4 ================= -->
             <article
-                class="project-card card-glow reveal p-7 h-full flex flex-col rounded-xl border border-zinc-700 bg-zinc-800/70 backdrop-blur-sm transition"
+                class="project-card group relative p-6 rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm transition-all duration-300 hover:border-indigo-500/30 reveal reveal-delay-4 flex flex-col"
             >
-                <div class="flex items-start justify-between">
-                    <h3 class="text-base font-semibold text-zinc-100">
-                        Rock Paper Scissors
-                    </h3>
-                    <span class="badge badge-ongoing">Ongoing</span>
+                <!-- Accent bar -->
+                <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500/60 to-indigo-600/20 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                        <span class="text-xs font-medium text-indigo-400/80 uppercase tracking-wider">Rust</span>
+                        <h3 class="text-lg font-semibold text-zinc-100 mt-1 group-hover:text-white transition-colors">
+                            Rock Paper Scissors
+                        </h3>
+                    </div>
+                    <span class="shrink-0 px-2.5 py-1 text-xs font-medium rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300">
+                        Ongoing
+                    </span>
                 </div>
 
-                <p class="text-zinc-400 mt-3 leading-relaxed">
+                <p class="text-zinc-400 text-sm leading-relaxed mb-5">
                     A modular Rust implementation using enums and pattern
                     matching, focused on safe state management and clean
                     architecture.
                 </p>
 
-                <div class="mt-auto pt-6 flex flex-col gap-4">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Rust</span>
-                        <span class="tag">egui</span>
-                        <span class="tag">eframe</span>
+                <!-- Tech tags & Footer -->
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">Rust</span>
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">egui</span>
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">eframe</span>
                     </div>
 
-                    <a
-                        href="https://github.com/srj011/Rock-Paper-Scissors-egui"
-                        target="_blank"
-                        rel="noopener"
-                        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
-                        bg-indigo-500/80 hover:bg-indigo-500
-                        text-white rounded-md shadow-sm hover:shadow-md
-                        transition-all duration-200 active:scale-[0.95]"
-                    >
-                        <GitHubIcon />
-                        <span>View Repository</span>
-                    </a>
+                    <div class="flex items-center gap-3">
+                        <a
+                            href="https://github.com/srj011/Rock-Paper-Scissors-egui"
+                            target="_blank"
+                            rel="noopener"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-lg
+                            bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 hover:border-indigo-500/40
+                            text-indigo-300 hover:text-indigo-200
+                            transition-all duration-200 active:scale-[0.95]"
+                        >
+                            <GitHubIcon />
+                            <span>Repository</span>
+                        </a>
+                    </div>
                 </div>
             </article>
         </div>
     </div>
 </section>
+
+<style>
+    .project-card {
+        transform: translateY(0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.5);
+    }
+</style>

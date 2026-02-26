@@ -6,64 +6,64 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
     id="hero"
     class="min-h-screen flex items-center justify-center px-6 text-center"
 >
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-3xl mx-auto space-y-6">
         <!-- Name -->
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
-            Hi, I’m <span class="text-indigo-400">Samved Raj</span>
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight">
+            Hi, I'm <span class="text-indigo-400">Samved Raj</span>
         </h1>
 
         <!-- Role -->
-        <p class="mt-6 text-base text-zinc-400 font-medium">
+        <p class="text-lg text-zinc-400 font-medium">
             Systems & Web Application Developer
         </p>
 
         <!-- Tech Stack -->
         <div
-            class="hero-stack mt-3 flex flex-wrap items-center justify-center gap-3
+            class="hero-stack flex flex-wrap items-center justify-center gap-3
              text-sm text-zinc-400"
         >
-            <span class="flex items-center gap-2">
+            <span class="tech-item flex items-center gap-2">
                 <i class="devicon-rust-plain text-base opacity-70"></i>
                 Rust
             </span>
 
             <span class="opacity-25">·</span>
 
-            <span class="flex items-center gap-2">
+            <span class="tech-item flex items-center gap-2">
                 <i class="devicon-python-plain text-base opacity-70"></i>
                 Python
             </span>
 
             <span class="opacity-25">·</span>
 
-            <span class="flex items-center gap-2">
+            <span class="tech-item flex items-center gap-2">
                 <i class="devicon-git-plain text-base opacity-70"></i>
                 Git
             </span>
 
             <span class="opacity-25">·</span>
 
-            <span class="flex items-center gap-2">
+            <span class="tech-item flex items-center gap-2">
                 <i class="devicon-linux-plain text-base opacity-70"></i>
                 Linux
             </span>
 
             <span class="opacity-25">·</span>
 
-            <span class="flex items-center gap-2">
+            <span class="tech-item flex items-center gap-2">
                 <i class="devicon-astro-plain text-base opacity-70"></i>
                 Astro
             </span>
         </div>
 
         <!-- CTA Buttons -->
-        <div class="mt-8 flex justify-center gap-4">
+        <div class="mt-6 flex justify-center gap-4">
             <a
                 href="#projects"
                 class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium
                bg-indigo-500/90 hover:bg-indigo-500
                text-white rounded-md active:scale-[0.95]
-               transition-colors duration-200"
+               transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/25"
             >
                 View Projects
             </a>
@@ -74,7 +74,7 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
                border border-zinc-700 hover:border-zinc-500
                text-zinc-300 hover:text-white
                rounded-md active:scale-[0.95]
-               transition-colors duration-200"
+               transition-all duration-200"
             >
                 Contact Me
             </a>

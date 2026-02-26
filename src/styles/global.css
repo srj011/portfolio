@@ -37,6 +37,20 @@ body {
     transform: translateY(0);
 }
 
+/* Staggered delays for children */
+.reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+    transition-delay: 0.4s;
+}
+
 /* ================= Navbar ================= */
 
 .nav-link {
@@ -164,9 +178,43 @@ body::before {
     pointer-events: none;
     z-index: 0;
 
-    background: radial-gradient(
-        1400px circle at 50% 400px,
-        rgba(124, 134, 255, 0.035),
-        transparent 80%
-    );
+    background:
+        radial-gradient(
+            1000px circle at 50% 30%,
+            rgba(124, 134, 255, 0.06),
+            transparent 60%
+        ),
+        radial-gradient(
+            800px circle at 80% 60%,
+            rgba(139, 92, 246, 0.04),
+            transparent 50%
+        ),
+        radial-gradient(
+            600px circle at 20% 80%,
+            rgba(99, 102, 241, 0.03),
+            transparent 40%
+        );
+}
+
+.tech-item {
+    transition: color 0.2s ease;
+}
+
+.tech-item:hover {
+    color: #a5b4fc;
+}
+
+/* Subtle float animation for tech items */
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.tech-item:hover i {
+    animation: float 1s ease-in-out infinite;
 }
