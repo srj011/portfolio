@@ -107,127 +107,122 @@ import SmoothScroll from "../components/SmoothScroll.astro";
         <Analytics />
 
         <!-- ALL DOM LOGIC GOES HERE -->
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                /* ================= Scroll Reveal ================= */
-                const observer = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add("visible");
-                            } else {
-                                entry.target.classList.remove("visible");
-                            }
-                        });
-                    },
-                    {
-                        threshold: 0.15,
-                    },
-                );
-
-                document
-                    .querySelectorAll(".reveal")
-                    .forEach((el) => observer.observe(el));
-
-                /* ================= Navbar Logic ================= */
-                const navbar = document.getElementById("navbar");
-                const progress = document.getElementById("scroll-progress");
-                const menuBtn = document.getElementById("menu-btn");
-                const mobileMenu = document.getElementById("mobile-menu");
-                const links = document.querySelectorAll("[data-link]");
-
-                window.addEventListener("scroll", () => {
-                    const scrollY = window.scrollY;
-
-                    /* Shrink navbar */
-                    navbar?.classList.toggle("h-14", scrollY > 20);
-                    navbar?.classList.toggle("h-16", scrollY <= 20);
-
-                    /* Scroll progress */
-                    const height =
-                        document.documentElement.scrollHeight -
-                        document.documentElement.clientHeight;
-                    if (progress) {
-                        progress.style.width = `${(scrollY / height) * 100}%`;
-                    }
-
-                    /* Active link */
-                    let activeLink = null;
-                    let maxVisibility = 0;
-
-                    links.forEach((link) => {
-                        const href = link.getAttribute("href");
-                        if (!href) return;
-
-                        const section = document.querySelector(href);
-                        if (!section) return;
-
-                        const rect = section.getBoundingClientRect();
-                        const viewportHeight = window.innerHeight;
-
-                        // Calculate how much of the section is visible in viewport
-                        const visibleTop = Math.max(0, rect.top);
-                        const visibleBottom = Math.min(
-                            viewportHeight,
-                            rect.bottom,
-                        );
-                        const visibleHeight = Math.max(
-                            0,
-                            visibleBottom - visibleTop,
-                        );
-                        const visibility = visibleHeight / rect.height;
-
-                        // Also consider proximity to top of viewport (target is ~120px from top)
-                        const distanceFromTarget = Math.abs(rect.top - 120);
-
-                        if (
-                            visibility > maxVisibility ||
-                            (visibility === maxVisibility &&
-                                distanceFromTarget < 50)
-                        ) {
-                            maxVisibility = visibility;
-                            activeLink = link;
+        <script is:inline>
+            /* ================= Scroll Reveal ================= */
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        } else {
+                            entry.target.classList.remove("visible");
                         }
                     });
+                },
+                {
+                    threshold: 0.15,
+                },
+            );
 
+            document
+                .querySelectorAll(".reveal")
+                .forEach((el) => observer.observe(el));
+
+            /* ================= Navbar Logic ================= */
+            const navbar = document.getElementById("navbar");
+            const progress = document.getElementById("scroll-progress");
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const links = document.querySelectorAll("[data-link]");
+
+            window.addEventListener("scroll", () => {
+                const scrollY = window.scrollY;
+
+                /* Shrink navbar */
+                navbar?.classList.toggle("h-14", scrollY > 20);
+                navbar?.classList.toggle("h-16", scrollY <= 20);
+
+                /* Scroll progress */
+                const height =
+                    document.documentElement.scrollHeight -
+                    document.documentElement.clientHeight;
+                if (progress) {
+                    progress.style.width = `${(scrollY / height) * 100}%`;
+                }
+
+                /* Active link */
+                let activeLink = null;
+                let maxVisibility = 0;
+
+                links.forEach((link) => {
+                    const href = link.getAttribute("href");
+                    if (!href) return;
+
+                    const section = document.querySelector(href);
+                    if (!section) return;
+
+                    const rect = section.getBoundingClientRect();
+                    const viewportHeight = window.innerHeight;
+
+                    // Calculate how much of the section is visible in viewport
+                    const visibleTop = Math.max(0, rect.top);
+                    const visibleBottom = Math.min(viewportHeight, rect.bottom);
+                    const visibleHeight = Math.max(
+                        0,
+                        visibleBottom - visibleTop,
+                    );
+                    const visibility = visibleHeight / rect.height;
+
+                    // Also consider proximity to top of viewport (target is ~120px from top)
+                    const distanceFromTarget = Math.abs(rect.top - 120);
+
+                    if (
+                        visibility > maxVisibility ||
+                        (visibility === maxVisibility &&
+                            distanceFromTarget < 50)
+                    ) {
+                        maxVisibility = visibility;
+                        activeLink = link;
+                    }
+                });
+
+                links.forEach((l) => l.classList.remove("active"));
+                if (activeLink && maxVisibility > 0.1) {
+                    activeLink.classList.add("active");
+                }
+
+                /* Remove active class when in hero (top of page) */
+                if (window.scrollY < 100) {
                     links.forEach((l) => l.classList.remove("active"));
-                    if (activeLink && maxVisibility > 0.1) {
-                        activeLink.classList.add("active");
-                    }
+                }
+            });
 
-                    /* Remove active class when in hero (top of page) */
-                    if (window.scrollY < 100) {
-                        links.forEach((l) => l.classList.remove("active"));
-                    }
+            /* Mobile menu */
+            menuBtn?.addEventListener("click", () => {
+                mobileMenu?.classList.toggle("hidden");
+            });
+
+            document.querySelectorAll(".mobile-link").forEach((link) => {
+                link.addEventListener("click", () => {
+                    mobileMenu?.classList.add("hidden");
                 });
+            });
 
-                /* Mobile menu */
-                menuBtn?.addEventListener("click", () => {
-                    mobileMenu?.classList.toggle("hidden");
-                });
+            /* ================= Back to Top ================= */
+            const backToTop = document.getElementById("back-to-top");
 
-                document.querySelectorAll(".mobile-link").forEach((link) => {
-                    link.addEventListener("click", () => {
-                        mobileMenu?.classList.add("hidden");
-                    });
-                });
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 500) {
+                    backToTop?.classList.remove("opacity-0", "invisible");
+                    backToTop?.classList.add("opacity-100", "visible");
+                } else {
+                    backToTop?.classList.remove("opacity-100", "visible");
+                    backToTop?.classList.add("opacity-0", "invisible");
+                }
+            });
 
-                /* ================= Back to Top ================= */
-                const backToTop = document.getElementById("back-to-top");
-
-                window.addEventListener("scroll", () => {
-                    if (window.scrollY > 500) {
-                        backToTop?.classList.remove("opacity-0", "invisible");
-                        backToTop?.classList.add("opacity-100", "visible");
-                    } else {
-                        backToTop?.classList.remove("opacity-100", "visible");
-                        backToTop?.classList.add("opacity-0", "invisible");
-                    }
-                });
-
-                backToTop?.addEventListener("click", () => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                });
+            backToTop?.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             });
         </script>
         <SmoothScroll />
