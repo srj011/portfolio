@@ -20,7 +20,7 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
         <div class="grid md:grid-cols-2 gap-6 auto-rows-fr">
             <!-- ================= Project 1 ================= -->
             <article
-                class="project-card group relative p-6 rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm transition-all duration-300 hover:border-indigo-500/30 reveal reveal-delay-1 flex flex-col"
+                class="project-card featured group relative p-6 rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm transition-all duration-300 hover:border-indigo-500/30 reveal reveal-delay-1 flex flex-col"
             >
                 <!-- Accent bar -->
                 <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500/60 to-indigo-600/20 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -28,7 +28,7 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
                 <!-- Header -->
                 <div class="flex items-start justify-between gap-4 mb-4">
                     <div>
-                        <span class="text-xs font-medium text-indigo-400/80 uppercase tracking-wider">Rust</span>
+                        <span class="text-xs font-medium text-indigo-400/80 uppercase tracking-wider">Rust + Sveltekit</span>
                         <h3 class="text-lg font-semibold text-zinc-100 mt-1 group-hover:text-white transition-colors">
                             Battleship Game
                         </h3>
@@ -40,16 +40,18 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
 
                 <!-- Description -->
                 <p class="text-zinc-400 text-sm leading-relaxed mb-5">
-                    A Battleship project evolving from a Rust game engine toward
-                    a planned full-stack system, currently focused on state
-                    modeling and strategic AI behavior.
+                    A real-time Battleship game with a modular Rust backend
+                    and SvelteKit frontend, featuring WebSocket-based multiplayer,
+                    event-driven updates, and player-specific game views.
                 </p>
 
                 <!-- Tech tags & Footer -->
                 <div class="mt-auto">
                     <div class="flex flex-wrap gap-2 mb-5">
                         <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">Rust</span>
-                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">AI Strategy</span>
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">SvelteKit</span>
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">Websockets</span>
+                        <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300">Multiplayer</span>
                     </div>
 
                     <div class="flex items-center gap-3">
